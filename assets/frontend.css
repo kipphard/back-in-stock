@@ -1,0 +1,100 @@
+/* Wieder verfügbar – Frontend-Styles */
+
+/* Formular-Container */
+.wvb-notify-wrap {
+	margin: 24px 0;
+	padding: 20px 24px;
+	background: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.wvb-heading {
+	margin-top: 0;
+	margin-bottom: 16px;
+	font-size: 1.1em;
+}
+
+/* Felder */
+.wvb-field {
+	margin-bottom: 14px;
+}
+
+.wvb-field label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.wvb-field input[type="email"] {
+	width: 100%;
+	max-width: 360px;
+	padding: 8px 10px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+/* Einwilligungsfeld */
+.wvb-consent-label {
+	font-weight: 400 !important;
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	cursor: pointer;
+}
+
+.wvb-consent-label input[type="checkbox"] {
+	margin-top: 2px;
+	flex-shrink: 0;
+}
+
+/* Pflichtzeichen */
+.wvb-required {
+	color: #d63638;
+	margin-left: 2px;
+}
+
+/* Button */
+.wvb-submit {
+	background: #2271b1;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-top: 4px;
+}
+
+.wvb-submit:hover,
+.wvb-submit:focus {
+	background: #135e96;
+	color: #fff;
+}
+
+.wvb-submit:disabled {
+	opacity: 0.6;
+	cursor: default;
+}
+
+/* Status-Meldungen */
+.wvb-message {
+	padding: 10px 14px;
+	border-radius: 3px;
+	margin-bottom: 14px;
+	font-size: 14px;
+}
+
+.wvb-message.wvb-success {
+	background: #edfaef;
+	border: 1px solid #00a32a;
+	color: #1a4731;
+}
+
+.wvb-message.wvb-error {
+	background: #fce8e8;
+	border: 1px solid #d63638;
+	color: #5c1d1e;
+}

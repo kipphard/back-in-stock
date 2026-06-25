@@ -1,0 +1,25 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/?post_type=product&name=demo",
+  "preferredVersions": { "php": "8.3", "wp": "latest" },
+  "features": { "networking": true },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": { "resource": "wordpress.org/plugins", "slug": "woocommerce" },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://github.com/kipphard/wieder-verfuegbar/releases/download/v0.1.0/wieder-verfuegbar-0.1.0.zip"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php';\nif ( class_exists( 'WC_Product_Simple' ) ) {\n  $p = new WC_Product_Simple();\n  $p->set_name( 'Limitierte Profi-Serie' );\n  $p->set_status( 'publish' );\n  $p->set_catalog_visibility( 'visible' );\n  $p->set_regular_price( '149' );\n  $p->set_stock_status( 'outofstock' );\n  $id = $p->save();\n  if ( $id ) {\n    wp_update_post( array( 'ID' => $id, 'post_name' => 'demo' ) );\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+/* Wieder verfügbar – Admin-Styles */
+
+.wvb-wrap .wvb-subscriptions-table {
+	margin-top: 16px;
+}
+
+.wvb-pro-features {
+	margin: 8px 0 16px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.wvb-pro-features li {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.wvb-pro-features li:last-child {
+	border-bottom: none;
+}
+
+.wvb-pro-features .dashicons {
+	color: #2271b1;
+	flex-shrink: 0;
+}
