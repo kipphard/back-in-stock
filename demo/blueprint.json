@@ -1,21 +1,45 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "landingPage": "/?post_type=product&name=demo",
-  "preferredVersions": { "php": "8.3", "wp": "latest" },
-  "features": { "networking": true },
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
   "steps": [
     {
       "step": "installPlugin",
-      "pluginData": { "resource": "wordpress.org/plugins", "slug": "woocommerce" },
-      "options": { "activate": true }
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woocommerce"
+      },
+      "options": {
+        "activate": true
+      }
     },
     {
       "step": "installPlugin",
       "pluginData": {
         "resource": "url",
-        "url": "https://github.com/kipphard/back-in-stock/releases/download/v0.3.0/back-in-stock-0.3.0.zip"
+        "url": "https://github.com/kipphard/back-in-stock/releases/download/v0.3.1/back-in-stock-0.3.1.zip"
       },
-      "options": { "activate": true }
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/kip-demo-panel.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/kipphard/back-in-stock/main/demo/kip-demo-panel.php"
+      }
     },
     {
       "step": "runPHP",
